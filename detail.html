@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+
+        <title>K.SNEAK - Step Into Your Style</title>
+    </head>
+    <body>
+        <div id="global-loader">
+            <div class="loader">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="32" cy="40" cx="40"></circle>
+                </svg>
+            </div>
+            <div class="loader triangle">
+                <svg viewBox="0 0 86 80" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                </svg>
+            </div>
+            <div class="loader">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect height="64" width="64" y="8" x="8"></rect>
+                </svg>
+            </div>
+        </div>
+
+        <header></header>
+
+        <main class="py-5">
+            <div class="container">
+                <div id="product-detail">
+                    <div class="row g-5 mb-5">
+                        <div class="col-6 product-image-wrapper"></div>
+                        <div class="col-6 product-info-wrapper"></div>
+                    </div>
+                    <div class="mb-5">
+                        <h4 class="fw-bold mb-4">Product Details</h4>
+                        <div class="row g-5">
+                            <div class="col-5">
+                                <div class="row g-2 product-more-info-wrapper"></div>
+                            </div>
+                            <div class="col-7 product-desc-wrapper">
+                                <div class="fw-bold mb-2">Product Description</div>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h4 class="fw-bold">Related Products</h4>
+                            <div class="d-flex align-items-center gap-2">
+                                <button type="button" id="related-btn-prev" class="btn-prev shadow-sm">
+                                    <i class="bi bi-chevron-left"></i>
+                                </button>
+                                <button type="button" id="related-btn-next" class="btn-next shadow-sm">
+                                    <i class="bi bi-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="related-list" class="row g-4 flex-nowrap position-relative overflow-x-hidden"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer></footer>
+
+        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-body position-relative">
+                        <div id="imageCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                            <button
+                                type="button"
+                                class="btn ms-auto position-absolute top-0 end-0 z-2"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            >
+                                <i class="bi bi-x-lg fs-5"></i>
+                            </button>
+
+                            <div class="carousel-inner h-100 align-content-center" id="carouselSlides"></div>
+                            <div class="carousel-indicators" id="carouselIndicators"></div>
+                            <button
+                                class="btn-prev btn-hero-prev"
+                                type="button"
+                                data-bs-target="#imageCarousel"
+                                data-bs-slide="prev"
+                            >
+                                <i class="bi bi-chevron-left"></i>
+                            </button>
+                            <button
+                                class="btn-next btn-hero-next"
+                                type="button"
+                                data-bs-target="#imageCarousel"
+                                data-bs-slide="next"
+                            >
+                                <i class="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+        <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+        <script type="module" src="scripts/detail.js"></script>
+    </body>
+</html>

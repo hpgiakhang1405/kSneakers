@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+
+        <title>Cart - K.SNEAK Store</title>
+    </head>
+    <body>
+        <div id="global-loader">
+            <div class="loader">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="32" cy="40" cx="40"></circle>
+                </svg>
+            </div>
+            <div class="loader triangle">
+                <svg viewBox="0 0 86 80" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                </svg>
+            </div>
+            <div class="loader">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect height="64" width="64" y="8" x="8"></rect>
+                </svg>
+            </div>
+        </div>
+
+        <header></header>
+
+        <main class="py-5">
+            <div class="container">
+                <div id="cart-wrapper" class="row g-5 mb-5 position-relative">
+                    <div class="inner-loader-wrapper" style="display: none"></div>
+                    <div class="col-8">
+                        <h3 class="fw-bold mb-4">Your Cart <span class="cart-qty"></span></h3>
+                        <div id="cart-list"></div>
+                    </div>
+                    <div class="col-4 border-start">
+                        <div class="order-summary-card">
+                            <h4 class="fw-bold mb-4">Order Summary</h4>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="text-muted fw-medium">Subtotal <span class="cart-qty"></span></div>
+                                <div>
+                                    <span class="text-decoration-line-through opacity-50 me-2 subtotal-value-old">
+                                    </span>
+                                    <span class="subtotal-value-new fw-bold">...</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="text-muted fw-medium">Shipping</div>
+                                <div>
+                                    <span class="text-decoration-line-through opacity-50 me-2 shipping-value-old">
+                                    </span>
+                                    <span class="shipping-value-new fw-bold">...</span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <div class="text-muted fw-medium">Tax</div>
+                                <div class="tax-value fw-bold">...</div>
+                            </div>
+
+                            <div class="divider"></div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-2 fs-5">
+                                <div>Total</div>
+                                <div>
+                                    <span class="text-decoration-line-through opacity-50 me-2 total-value-old"></span>
+                                    <span class="total-value-new fw-bold">...</span>
+                                </div>
+                            </div>
+
+                            <button
+                                id="checkout-btn"
+                                type="button"
+                                class="btn btn-dark w-100 mt-4 rounded-3 fw-bold py-2"
+                            >
+                                <i class="bi bi-bag-check fs-5 me-2"></i>
+                                <span>Proceed to Checkout</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer></footer>
+
+        <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+        <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+        <script type="module" src="scripts/cart.js"></script>
+    </body>
+</html>

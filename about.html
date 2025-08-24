@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+
+        <title>About K.SNEAK</title>
+        <style>
+            .bg-gradient-light {
+                background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            }
+
+            .hero-gradient-text {
+                background: linear-gradient(90deg, #fd7e14, #e63946);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+                font-weight: 700;
+            }
+
+            .text-gradient {
+                background: linear-gradient(90deg, #212529, #495057);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+
+            .text-dark-50 {
+                color: rgba(33, 37, 41, 0.7);
+            }
+
+            .hero-bg {
+                background-image: url('assets/images/about_hero.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 1;
+            }
+
+            .hero-bg::before {
+                content: '';
+                width: 80%;
+                height: 100%;
+                position: absolute;
+                inset: 0;
+                background-image: linear-gradient(to right, #ffffff 40%, transparent);
+                opacity: 1;
+            }
+
+            .subtle-blur {
+                animation: subtle-pulse 6s infinite alternate;
+            }
+
+            @keyframes subtle-pulse {
+                0% {
+                    opacity: 0.03;
+                    transform: scale(1) translate(0, 0);
+                }
+                100% {
+                    opacity: 0.15;
+                    transform: scale(1.05) translate(5px, -5px);
+                }
+            }
+
+            .modern-shadow {
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            }
+
+            .modern-card {
+                border-radius: 16px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .modern-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            .accent-line {
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, #fd7e14, #e63946);
+                border-radius: 12px;
+            }
+
+            .hero-badge {
+                border-radius: 30px;
+                position: relative;
+            }
+
+            .hero-badge::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 30px;
+                padding: 1.5px;
+                background: linear-gradient(90deg, #fd7e14, #e63946);
+                -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+            }
+
+            .text-light-50 {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            .btn-glow {
+                position: relative;
+                overflow: hidden;
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+
+            .btn-glow:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(45deg, #212529, #343a40);
+                z-index: -1;
+            }
+
+            .btn-glow:after {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: linear-gradient(
+                    45deg,
+                    rgba(255, 193, 7, 0.1),
+                    rgba(33, 37, 41, 0.1),
+                    rgba(255, 193, 7, 0.1)
+                );
+                transform: rotate(45deg);
+                animation: glow 3s infinite linear;
+                z-index: -2;
+            }
+
+            @keyframes glow {
+                0% {
+                    transform: rotate(45deg) translate(-100%, -100%);
+                }
+                100% {
+                    transform: rotate(45deg) translate(100%, 100%);
+                }
+            }
+
+            .btn-glow:hover {
+                transform: translateY(-2px) scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+            .icon-wrapper {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+            }
+
+            .hover-card {
+                transition: all 0.3s ease;
+            }
+
+            .hover-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .hover-shadow {
+                transition: all 0.3s ease;
+            }
+
+            .hover-shadow:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            .founder-card {
+                background: linear-gradient(145deg, #ffffff, #f8f9fa);
+                border-radius: 20px;
+                transition: all 0.3s ease;
+            }
+
+            .founder-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            }
+
+            .founder-quote {
+                position: relative;
+                border-left: 4px solid var(--bs-dark);
+            }
+
+            .counter {
+                background: linear-gradient(90deg, #212529, #495057);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                color: transparent;
+            }
+
+            .testimonial-card {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                padding: 2rem;
+            }
+
+            .testimonial-card:before {
+                content: '\201C';
+                position: absolute;
+                top: -25px;
+                left: 10px;
+                font-size: 8rem;
+                font-family: 'Georgia', serif;
+                color: rgba(0, 0, 0, 0.05);
+                line-height: 1;
+            }
+
+            @media (max-width: 768px) {
+                .display-2 {
+                    font-size: 2.5rem;
+                }
+
+                .display-5 {
+                    font-size: 1.8rem;
+                }
+
+                .founder-card {
+                    padding: 1.5rem !important;
+                }
+
+                .icon-wrapper {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="global-loader">
+            <div class="loader">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="32" cy="40" cx="40"></circle>
+                </svg>
+            </div>
+            <div class="loader triangle">
+                <svg viewBox="0 0 86 80" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                </svg>
+            </div>
+            <div class="loader">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect height="64" width="64" y="8" x="8"></rect>
+                </svg>
+            </div>
+        </div>
+
+        <header></header>
+
+        <main class="py-0">
+            <section class="position-relative bg-white overflow-hidden py-5">
+                <div class="position-absolute top-0 start-0 w-100 h-100 hero-bg"></div>
+                <div
+                    class="position-absolute top-30 start-0 translate-middle"
+                    style="
+                        width: 400px;
+                        height: 400px;
+                        background: linear-gradient(45deg, #fd7e14, #e63946);
+                        border-radius: 50%;
+                        filter: blur(120px);
+                        opacity: 0.1;
+                    "
+                ></div>
+
+                <div class="container position-relative z-2 py-5">
+                    <div>
+                        <div class="accent-line mb-4"></div>
+                        <h1 class="display-2 fw-bold mb-4 lh-1" style="letter-spacing: -1.5px">
+                            About <span class="hero-gradient-text">K.SNEAK</span>
+                        </h1>
+                        <p class="mb-5 text-dark-50" style="font-size: 1.3rem">
+                            Discover the world of sneakers with us. <br />
+                            Your journey to the freshest kicks starts here.
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="catalog.html">
+                                <button
+                                    type="button"
+                                    class="btn btn-lg btn-dark rounded-4 fw-bold px-4 py-3 lh-1 shadow-sm"
+                                >
+                                    <span>Shop Now</span>
+                                    <i class="bi bi-arrow-right ms-2"></i>
+                                </button>
+                            </a>
+
+                            <a href="#our-story">
+                                <button
+                                    type="button"
+                                    class="btn btn-lg btn-outline-dark border-dark-subtle rounded-4 px-4 py-3 lh-1"
+                                >
+                                    Our Story
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 bg-light position-relative overflow-hidden">
+                <div
+                    class="position-absolute top-50 end-0 translate-middle"
+                    style="
+                        width: 200px;
+                        height: 200px;
+                        background: linear-gradient(135deg, #212529, #495057);
+                        border-radius: 50%;
+                        filter: blur(100px);
+                        opacity: 0.03;
+                    "
+                ></div>
+                <div class="container">
+                    <div class="row g-4 text-center">
+                        <div class="col-6 col-md-3">
+                            <div class="h2 fw-bold mb-1"><span class="counter">500+</span></div>
+                            <p class="text-muted mb-0">Sneaker Styles</p>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="h2 fw-bold mb-1"><span class="counter">10+</span></div>
+                            <p class="text-muted mb-0">Top Brands</p>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="h2 fw-bold mb-1"><span class="counter">15000+</span></div>
+                            <p class="text-muted mb-0">Happy Customers</p>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="h2 fw-bold mb-1"><span class="counter">99%</span></div>
+                            <p class="text-muted mb-0">Satisfaction Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pb-5 bg-white position-relative overflow-hidden" id="our-story" style="padding-top: 8rem">
+                <div
+                    class="position-absolute top-50 start-0"
+                    style="
+                        width: 300px;
+                        height: 300px;
+                        background: linear-gradient(45deg, #212529, #495057);
+                        border-radius: 50%;
+                        filter: blur(150px);
+                        opacity: 0.1;
+                    "
+                ></div>
+                <div class="container py-4">
+                    <div class="row align-items-center g-5">
+                        <div class="col-md-6 order-md-2">
+                            <div class="position-relative">
+                                <img
+                                    src="assets/images/about_mission.jpg"
+                                    alt="Our Mission"
+                                    class="w-100 h-100 rounded-4 shadow object-fit-cover"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-md-6 order-md-1">
+                            <div class="mb-3 d-inline-block">
+                                <span class="px-3 py-2 bg-dark text-light rounded-pill fw-semibold small">
+                                    OUR MISSION
+                                </span>
+                            </div>
+                            <h2 class="display-5 fw-bold mb-4">Elevating Sneaker Culture</h2>
+                            <p class="fs-5 mb-4 text-secondary">
+                                At <span class="fw-semibold">K.SNEAK</span>, we empower sneaker lovers to express
+                                themselves through authentic, curated collections. We believe sneakers are more than
+                                shoes-they're culture, creativity, and community.
+                            </p>
+                            <div class="d-flex flex-column gap-3 mb-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-lightning-charge-fill fs-2 me-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Fast, Seamless Experience</h6>
+                                        <p class="text-muted mb-0 small">Shop with ease on any device, anytime</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-shield-fill-check fs-2 me-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">100% Authentic Products</h6>
+                                        <p class="text-muted mb-0 small">Every pair verified and guaranteed</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-people-fill fs-2 me-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Community-Driven</h6>
+                                        <p class="text-muted mb-0 small">Built by sneakerheads, for sneakerheads</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 position-relative overflow-hidden">
+                <div
+                    class="position-absolute top-50 end-50"
+                    style="
+                        width: 400px;
+                        height: 400px;
+                        background: linear-gradient(45deg, #212529, #495057);
+                        border-radius: 50%;
+                        filter: blur(200px);
+                        opacity: 0.1;
+                    "
+                ></div>
+                <div class="container py-4">
+                    <div class="text-center mb-5">
+                        <div class="mb-3 d-inline-block">
+                            <span class="px-3 py-2 bg-dark text-light rounded-pill fw-semibold small">
+                                WHY CHOOSE US
+                            </span>
+                        </div>
+                        <h2 class="display-5 fw-bold">The K.SNEAK Difference</h2>
+                        <div class="mx-auto" style="max-width: 600px">
+                            <p class="text-muted">
+                                What sets us apart from other sneaker retailers? Our commitment to authenticity,
+                                community, and exceptional service.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-6 col-md-3">
+                            <div class="card border-0 shadow-sm text-center h-100 p-4 hover-card rounded-4">
+                                <div class="icon-wrapper bg-gradient-dark mb-3 mx-auto">
+                                    <i class="bi bi-bag-check-fill fs-1"></i>
+                                </div>
+                                <h5 class="fw-semibold mb-2">Top Brands</h5>
+                                <p class="text-muted mb-0">Curated selection from the world's best sneaker brands.</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="card border-0 shadow-sm text-center h-100 p-4 hover-card rounded-4">
+                                <div class="icon-wrapper bg-gradient-dark mb-3 mx-auto">
+                                    <i class="bi bi-patch-check-fill fs-1"></i>
+                                </div>
+                                <h5 class="fw-semibold mb-2">Authenticity</h5>
+                                <p class="text-muted mb-0">Every pair is 100% authentic, guaranteed.</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="card border-0 shadow-sm text-center h-100 p-4 hover-card rounded-4">
+                                <div class="icon-wrapper bg-gradient-dark mb-3 mx-auto">
+                                    <i class="bi bi-truck-front-fill fs-1"></i>
+                                </div>
+                                <h5 class="fw-semibold mb-2">Fast Delivery</h5>
+                                <p class="text-muted mb-0">Quick, reliable shipping and easy returns.</p>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="card border-0 shadow-sm text-center h-100 p-4 hover-card rounded-4">
+                                <div class="icon-wrapper bg-gradient-dark mb-3 mx-auto">
+                                    <i class="bi bi-headset fs-1"></i>
+                                </div>
+                                <h5 class="fw-semibold mb-2">Support</h5>
+                                <p class="text-muted mb-0">Friendly, dedicated customer service.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 bg-white position-relative overflow-hidden">
+                <div
+                    class="position-absolute top-0 end-0"
+                    style="
+                        width: 300px;
+                        height: 300px;
+                        background: linear-gradient(-60deg, #212529, #495057);
+                        border-radius: 50%;
+                        filter: blur(120px);
+                        opacity: 0.1;
+                    "
+                ></div>
+                <div class="container py-4">
+                    <div class="text-center mb-5">
+                        <div class="mb-3 d-inline-block">
+                            <span class="px-3 py-2 bg-dark text-light rounded-pill fw-semibold small">
+                                TESTIMONIALS
+                            </span>
+                        </div>
+                        <h2 class="display-5 fw-bold">What Our Customers Say</h2>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow h-100 p-4 hover-shadow testimonial-card rounded-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                </div>
+                                <p class="mb-2" style="min-height: 100px">
+                                    "KSNEAK has the best selection of limited edition sneakers. Fast shipping and
+                                    excellent customer service. My go-to sneaker shop!"
+                                </p>
+                                <div class="d-flex align-items-center gap-3">
+                                    <img src="assets/images/avatar_5.svg" alt="" class="img-fluid" width="48" />
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Anh Khoa</h6>
+                                        <small class="text-muted">Sneaker Enthusiast</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow h-100 p-4 hover-shadow testimonial-card rounded-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                </div>
+                                <p class="mb-2" style="min-height: 100px">
+                                    "Found my grail sneakers here after searching for months. The authentication process
+                                    gives me peace of mind that I'm getting genuine products."
+                                </p>
+                                <div class="d-flex align-items-center gap-3">
+                                    <img src="assets/images/avatar_4.svg" alt="" class="img-fluid" width="48" />
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Van Linh</h6>
+                                        <small class="text-muted">Sneaker Enthusiast</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow h-100 p-4 hover-shadow testimonial-card rounded-4">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning me-1"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                </div>
+                                <p class="mb-2" style="min-height: 100px">
+                                    "The team at KSNEAK goes above and beyond. They helped me find a limited edition
+                                    pair I'd been searching for. The unboxing experience was also top-notch!"
+                                </p>
+                                <div class="d-flex align-items-center gap-3">
+                                    <img src="assets/images/avatar_3.svg" alt="" class="img-fluid" width="48" />
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Xuan Thien</h6>
+                                        <small class="text-muted">Sneaker Enthusiast</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-5 bg-light position-relative overflow-hidden">
+                <div class="container py-4">
+                    <div class="text-center mb-5">
+                        <div class="mb-3 d-inline-block">
+                            <span class="px-3 py-2 bg-dark text-light rounded-pill fw-semibold small">FOUNDER</span>
+                        </div>
+                        <h2 class="display-5 fw-bold">Meet the Visionary</h2>
+                        <div class="mx-auto" style="max-width: 600px">
+                            <p class="text-muted">The passion and expertise behind KSNEAK.</p>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div
+                                class="card border-0 shadow-lg h-100 founder-card p-5 mx-auto"
+                                style="max-width: 560px"
+                            >
+                                <div class="text-center">
+                                    <div class="position-relative mb-3">
+                                        <img
+                                            src="assets/images/avatar_0.svg"
+                                            alt="Founder"
+                                            class="rounded-circle mb-3 shadow"
+                                            width="140"
+                                            height="140"
+                                        />
+                                    </div>
+                                    <h3 class="fw-bold mb-1">Huynh Pham Gia Khang</h3>
+                                    <div class="text-gradient mb-3">Founder & CEO</div>
+                                    <p class="text-muted mb-4">
+                                        Sneakerhead, entrepreneur, and visionary behind KSNEAK. Passionate about
+                                        bringing the best sneaker experience to enthusiasts around the world.
+                                    </p>
+                                    <div class="d-flex justify-content-center gap-2 mb-3">
+                                        <a
+                                            href="#"
+                                            class="btn btn-outline-dark rounded-circle lh-1"
+                                            style="padding: 12px"
+                                        >
+                                            <i class="bi bi-twitter-x fs-5"></i>
+                                        </a>
+                                        <a
+                                            href="#"
+                                            class="btn btn-outline-dark rounded-circle lh-1"
+                                            style="padding: 12px"
+                                        >
+                                            <i class="bi bi-instagram fs-5"></i>
+                                        </a>
+                                        <a
+                                            href="#"
+                                            class="btn btn-outline-dark rounded-circle lh-1"
+                                            style="padding: 12px"
+                                        >
+                                            <i class="bi bi-linkedin fs-5"></i>
+                                        </a>
+                                        <a
+                                            href="#"
+                                            class="btn btn-outline-dark rounded-circle lh-1"
+                                            style="padding: 12px"
+                                        >
+                                            <i class="bi bi-envelope fs-5"></i>
+                                        </a>
+                                    </div>
+                                    <div
+                                        class="founder-quote mt-4 px-3 py-4 bg-light rounded-4 position-relative shadow-sm"
+                                    >
+                                        <i
+                                            class="bi bi-quote position-absolute text-dark"
+                                            style="font-size: 3rem; top: -35px; left: 10px; opacity: 0.15"
+                                        ></i>
+                                        <p class="fst-italic mb-0 position-relative">
+                                            My mission is to make authentic sneaker culture accessible to everyone,
+                                            creating a community where passion for kicks unites us all.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer></footer>
+
+        <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+        <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="scripts/main.js"></script>
+        <script type="module" src="scripts/about.js"></script>
+    </body>
+</html>

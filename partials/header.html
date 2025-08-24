@@ -1,0 +1,177 @@
+<div class="container">
+    <div class="d-flex align-items-center justify-content-between pt-3 pb-1">
+        <a href="index.html" class="fs-3 navbar-brand fw-bold">
+            <div>K.<span class="opacity-50">SNEAK</span></div>
+        </a>
+
+        <div class="search-box position-relative dropdown rounded-4 shadow-sm">
+            <span id="search-icon" class="position-absolute top-50 start-0 translate-middle-y ms-3">
+                <i class="bi bi-search"></i>
+            </span>
+
+            <form id="search-form">
+                <input type="search" class="form-control px-5 rounded-4" placeholder="What are you looking for?" />
+            </form>
+
+            <span
+                id="clear-btn"
+                class="right-icon position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer"
+            >
+                <i class="bi bi-x fs-5"></i>
+            </span>
+
+            <span class="load-icon position-absolute top-50 end-0 translate-middle-y me-3 cursor-pointer">
+                <i class="bi bi-arrow-clockwise"></i>
+            </span>
+
+            <ul class="dropdown-menu mt-2 rounded-4 border-0 shadow w-100 overflow-y-auto"></ul>
+        </div>
+
+        <div class="mx-4 d-flex align-items-center gap-2">
+            <a href="about.html">
+                <button type="button" class="btn btn-link text-decoration-none text-dark fw-medium">About</button>
+            </a>
+            <a href="#">
+                <button type="button" class="btn btn-link text-decoration-none text-dark fw-medium">Help</button>
+            </a>
+        </div>
+
+        <div id="header-user" class="align-items-center gap-4">
+            <a href="cart.html" class="position-relative p-1">
+                <i class="bi bi-bag fs-5"></i>
+                <span
+                    id="cart-badge"
+                    class="badge position-absolute top-0 start-100 translate-middle rounded-pill bg-warning"
+                    style="display: none"
+                >
+                </span>
+            </a>
+
+            <a href="#" class="position-relative p-1">
+                <i class="bi bi-heart fs-5"></i>
+            </a>
+
+            <div class="position-relative p-1 dropdown">
+                <div id="user" class="cursor-pointer"></div>
+                <ul class="dropdown-menu mt-2 rounded-4 border-0 shadow overflow-y-hidden">
+                    <div id="user-info" class="p-3 d-flex align-items-center gap-2"></div>
+                    <div class="dropdown-divider"></div>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                            <i class="bi bi-person fs-5"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                            <i class="bi bi-gear fs-5"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center gap-2" href="#">
+                            <i class="bi bi-question-circle fs-5"></i>
+                            <span>Support</span>
+                        </a>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <li>
+                        <button
+                            type="button"
+                            class="dropdown-item d-flex align-items-center gap-2 logout-btn position-relative"
+                        >
+                            <div class="inner-loader-wrapper" style="display: none">
+                                <div class="inner-loader small"></div>
+                            </div>
+                            <i class="bi bi-box-arrow-right fs-5"></i>
+                            <span>Sign Out</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="header-btns" class="align-items-center gap-1">
+            <a href="auth.html?mode=login">
+                <button type="button" class="btn btn-outline-dark border-dark-subtle">Sign In</button>
+            </a>
+            <a href="auth.html?mode=register">
+                <button type="button" class="btn btn-dark">Sign Up</button>
+            </a>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg py-3">
+        <ul class="navbar-nav fw-semibold gap-4">
+            <li class="nav-item">
+                <a href="catalog.html?gender=men" class="nav-link p-0">Men</a>
+            </li>
+            <li class="nav-item">
+                <a href="catalog.html?gender=women" class="nav-link p-0">Women</a>
+            </li>
+            <li class="nav-item">
+                <a href="catalog.html?gender=kids" class="nav-link p-0">Kids</a>
+            </li>
+            <li id="nav-brands" class="nav-item dropdown position-relative">
+                <a href="#" class="nav-link p-0">Brands</a>
+                <ul class="dropdown-menu mt-2 rounded-4 border-0 shadow overflow-y-visible">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <li class="w-50">
+                            <a class="btn btn-outline-dark w-100 rounded-4 border-0" href="catalog.html?brand=asics">
+                                ASICS
+                            </a>
+                        </li>
+                        <li class="w-50">
+                            <a class="btn btn-outline-dark w-100 rounded-4 border-0" href="catalog.html?brand=converse">
+                                Converse
+                            </a>
+                        </li>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <li class="w-50">
+                            <a class="btn btn-outline-dark w-100 rounded-4 border-0" href="catalog.html?brand=jordan">
+                                Jordan
+                            </a>
+                        </li>
+                        <li class="w-50">
+                            <a class="btn btn-outline-dark w-100 rounded-4 border-0" href="catalog.html?brand=nike">
+                                Nike
+                            </a>
+                        </li>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <li class="w-50">
+                            <a class="btn btn-outline-dark w-100 rounded-4 border-0" href="catalog.html?brand=saucony">
+                                Saucony
+                            </a>
+                        </li>
+                        <li class="w-50">
+                            <a class="btn btn-outline-dark w-100 rounded-4 border-0" href="catalog.html?brand=ugg">
+                                UGG
+                            </a>
+                        </li>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <li class="w-50">
+                            <a class="btn btn-outline-dark w-100 rounded-4 border-0" href="catalog.html?brand=vans">
+                                Vans
+                            </a>
+                        </li>
+                        <li class="w-50">
+                            <a class="btn btn-outline-dark w-100 rounded-4 border-0" href="catalog.html?brand=adidas">
+                                adidas
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="catalog.html?sort=newest" class="nav-link p-0">New</a>
+            </li>
+            <li class="nav-item">
+                <a href="catalog.html?sort=best-discount" class="nav-link p-0 fw-bold text-danger">Sale</a>
+            </li>
+        </ul>
+    </nav>
+</div>

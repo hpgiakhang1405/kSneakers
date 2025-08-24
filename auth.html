@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+
+        <title>Welcome to K.SNEAK</title>
+    </head>
+    <body>
+        <div id="global-loader">
+            <div class="loader">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="32" cy="40" cx="40"></circle>
+                </svg>
+            </div>
+            <div class="loader triangle">
+                <svg viewBox="0 0 86 80" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="43 8 79 72 7 72"></polygon>
+                </svg>
+            </div>
+            <div class="loader">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                    <rect height="64" width="64" y="8" x="8"></rect>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="auth-wrapper position-relative">
+                <div class="inner-loader-wrapper" style="display: none">
+                    <div class="inner-loader"></div>
+                </div>
+                <div class="row g-0 h-100">
+                    <div class="col">
+                        <div class="d-flex m-5 mb-0">
+                            <a href="index.html" class="fs-3 navbar-brand fw-bold">
+                                <div>K.<span class="opacity-50">SNEAK</span></div>
+                            </a>
+                        </div>
+
+                        <div class="form-wrapper overflow-hidden my-5 h-100">
+                            <div class="position-relative mx-5">
+                                <form class="login needs-validation" novalidate>
+                                    <div class="mb-5">
+                                        <h4 class="fw-bold">Welcome Back!</h4>
+                                        <span>Please enter log in details below</span>
+                                    </div>
+
+                                    <div class="form-error-alert alert alert-danger align-items-center" role="alert">
+                                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                        <span class="error-message">
+                                            Incorrect username or password. Please try again.
+                                        </span>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input
+                                            type="text"
+                                            class="form-control rounded-3 ps-3"
+                                            id="login-username"
+                                            placeholder="Username"
+                                            autocomplete="username"
+                                            required
+                                        />
+                                        <label for="login-username" class="opacity-75 ps-3">Username</label>
+                                        <div class="invalid-feedback">
+                                            Username must be 3-20 characters and contain only letters, numbers, or
+                                            underscores.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input
+                                            type="password"
+                                            class="form-control rounded-3 ps-3"
+                                            id="login-password"
+                                            placeholder="Password"
+                                            autocomplete="current-password"
+                                            required
+                                        />
+                                        <label for="login-password" class="opacity-75 ps-3">Password</label>
+                                        <div class="toggle-password-wrapper" tabindex="-1">
+                                            <button
+                                                type="button"
+                                                class="toggle-password btn btn-lg p-1 border-0"
+                                                data-target="#login-password"
+                                            >
+                                                <i class="bi bi-eye-slash"></i>
+                                            </button>
+                                        </div>
+                                        <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+                                    </div>
+
+                                    <div class="text-end mb-4">
+                                        <span class="opacity-50 cursor-pointer">Forget password?</span>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-dark fw-semibold p-3 w-100 rounded-3">
+                                        Sign In
+                                    </button>
+
+                                    <div class="d-flex align-items-center my-3">
+                                        <hr class="flex-grow-1" />
+                                        <span class="mx-2 text-muted">or continue</span>
+                                        <hr class="flex-grow-1" />
+                                    </div>
+                                    <button
+                                        type="button"
+                                        class="btn btn-outline-dark p-2 w-100 rounded-3 border-dark-subtle"
+                                    >
+                                        <img
+                                            src="assets/images/google_logo.png"
+                                            alt="google_logo"
+                                            style="width: 30px; height: 30px"
+                                        />
+                                        <span>Sign in with Google</span>
+                                    </button>
+                                    <div class="text-center mt-5 text-muted">
+                                        Don't have an account?
+                                        <span class="text-dark cursor-pointer fw-semibold trigger" data-mode="register">
+                                            Sign Up
+                                        </span>
+                                    </div>
+                                </form>
+
+                                <form class="register needs-validation" novalidate>
+                                    <div class="mb-5">
+                                        <h4 class="fw-bold">Create an account</h4>
+                                        <span>Join us today</span>
+                                    </div>
+
+                                    <div class="form-error-alert alert alert-danger align-items-center" role="alert">
+                                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                        <span class="error-message">This account already exists.</span>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input
+                                            type="text"
+                                            class="form-control rounded-3 ps-3"
+                                            id="register-username"
+                                            placeholder="Username"
+                                            autocomplete="username"
+                                            required
+                                        />
+                                        <label for="register-username" class="opacity-75 ps-3">Username</label>
+                                        <div class="invalid-feedback">
+                                            Username must be 3-20 characters and contain only letters, numbers, or
+                                            underscores.
+                                        </div>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input
+                                            type="email"
+                                            class="form-control rounded-3 ps-3"
+                                            id="register-email"
+                                            placeholder="Email"
+                                            autocomplete="email"
+                                            required
+                                        />
+                                        <label for="register-email" class="opacity-75 ps-3">Email</label>
+                                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input
+                                            type="password"
+                                            class="form-control rounded-3 ps-3"
+                                            id="register-password"
+                                            placeholder="Password"
+                                            autocomplete="new-password"
+                                            required
+                                        />
+                                        <label for="register-password" class="opacity-75 ps-3">Password</label>
+                                        <div class="toggle-password-wrapper" tabindex="-1">
+                                            <button
+                                                type="button"
+                                                class="toggle-password btn btn-lg p-1 border-0"
+                                                data-target="#register-password"
+                                            >
+                                                <i class="bi bi-eye-slash"></i>
+                                            </button>
+                                        </div>
+                                        <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input
+                                            type="password"
+                                            class="form-control rounded-3 ps-3"
+                                            id="register-confirm-password"
+                                            placeholder="Confirm Password"
+                                            autocomplete="new-password"
+                                            required
+                                        />
+                                        <label for="register-confirm-password" class="opacity-75 ps-3">
+                                            Confirm Password
+                                        </label>
+                                        <div class="toggle-password-wrapper" tabindex="-1">
+                                            <button
+                                                type="button"
+                                                class="toggle-password btn btn-lg p-1 border-0"
+                                                data-target="#register-confirm-password"
+                                            >
+                                                <i class="bi bi-eye-slash"></i>
+                                            </button>
+                                        </div>
+                                        <div class="invalid-feedback">Passwords do not match.</div>
+                                    </div>
+
+                                    <div class="form-check mb-4">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            id="register-agree-check"
+                                            required
+                                        />
+                                        <label for="register-agree-check" class="form-check-label">
+                                            I agree to the
+                                            <a href="#" class="fw-semibold border-bottom" style="color: inherit">
+                                                Terms
+                                            </a>
+                                            &
+                                            <a href="#" class="fw-semibold border-bottom" style="color: inherit">
+                                                condition
+                                            </a>
+                                        </label>
+                                        <div class="invalid-feedback">You must agree to continue.</div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-dark fw-semibold p-3 w-100 rounded-3">
+                                        Sign Up
+                                    </button>
+
+                                    <div class="d-flex align-items-center my-3">
+                                        <hr class="flex-grow-1" />
+                                        <span class="mx-2 text-muted">or continue</span>
+                                        <hr class="flex-grow-1" />
+                                    </div>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-outline-dark p-2 w-100 rounded-3 border-dark-subtle"
+                                    >
+                                        <img
+                                            src="assets/images/google_logo.png"
+                                            alt="google_logo"
+                                            style="width: 30px; height: 30px"
+                                        />
+                                        <span>Sign up with Google</span>
+                                    </button>
+                                    <div class="text-center mt-5 text-muted">
+                                        Already have an account?
+                                        <span class="text-dark cursor-pointer fw-semibold trigger" data-mode="login">
+                                            Sign In
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="auth-image"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+        <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="scripts/auth.js"></script>
+    </body>
+</html>

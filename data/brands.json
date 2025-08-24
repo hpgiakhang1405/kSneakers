@@ -1,0 +1,10 @@
+[
+    { "name": "ASICS", "slug": "asics", "logo": "assets/images/asics_logo.png" },
+    { "name": "Converse", "slug": "converse", "logo": "assets/images/converse_logo.png" },
+    { "name": "Jordan", "slug": "jordan", "logo": "assets/images/jordan_logo.png" },
+    { "name": "Nike", "slug": "nike", "logo": "assets/images/nike_logo.png" },
+    { "name": "Saucony", "slug": "saucony", "logo": "assets/images/saucony_logo.png" },
+    { "name": "UGG", "slug": "ugg", "logo": "assets/images/ugg_logo.png" },
+    { "name": "Vans", "slug": "vans", "logo": "assets/images/vans_logo.png" },
+    { "name": "adidas", "slug": "adidas", "logo": "assets/images/adidas_logo.png" }
+]
